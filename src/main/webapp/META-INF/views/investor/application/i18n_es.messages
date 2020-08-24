@@ -1,0 +1,9 @@
+investor.application.form.label.ticker = Ticker:
+investor.application.form.label.moment = Momento:
+investor.application.form.label.statement = Estado:
+investor.application.form.label.moneyOffer = Dinero:
+
+investor.application.list.label.ticker = Ticker
+investor.application.list.label.moneyOffer = Dinero
+
+investor.application.form.button.return = Volver

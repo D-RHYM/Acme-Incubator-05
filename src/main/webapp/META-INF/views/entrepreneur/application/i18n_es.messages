@@ -1,0 +1,9 @@
+entrepreneur.application.form.label.ticker = Ticker
+entrepreneur.application.form.label.moment = Momento
+entrepreneur.application.form.label.statement = Estado
+entrepreneur.application.form.label.moneyOffer = Dinero
+
+entrepreneur.application.list.label.ticker = Ticker
+entrepreneur.application.list.label.moneyOffer = Dinero
+
+entrepreneur.investmentRound.form.button.return = Volver

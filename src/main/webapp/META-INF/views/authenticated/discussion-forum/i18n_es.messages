@@ -1,0 +1,11 @@
+authenticated.discussion-forum.form.label.investmentRound.title = Ronda de inversion:
+authenticated.discussion-forum.form.label.creator = Creado por
+
+authenticated.discussion-forum.form.button.list-messages = Listar mensajes
+authenticated.discussion-forum.form.button.add-message = Publicar nuevo mensaje
+authenticated.discussion-forum.form.button.return = Volver
+
+authenticated.discussion-forum.list.label.investmentRound.title = Ronda de Inversion
+authenticated.discussion-forum.list.label.investmentRound.description = Descripcion
+authenticated.discussion-forum.list.label.investmentRound.ticker = Ticker
+authenticated.discussion-forum.list.label.creator = Creador

@@ -1,0 +1,16 @@
+entrepreneur.investmentRound.form.label.ticker = Ticker:
+entrepreneur.investmentRound.form.label.moment = Fecha de creación:
+entrepreneur.investmentRound.form.label.round = Ronda:
+entrepreneur.investmentRound.form.label.title = Título:
+entrepreneur.investmentRound.form.label.description = Descripción:
+entrepreneur.investmentRound.form.label.amount = Cantidad:
+entrepreneur.investmentRound.form.label.link = Enlace:
+
+entrepreneur.investmentRound.activity.list = Lista de actividades
+
+entrepreneur.investmentRound.form.button.return = Volver
+entrepreneur.investmentRound.form.button.list-accounting-record = Listar registros de contabilidad
+
+entrepreneur.investmentRound.list.label.ticker = Ticker
+entrepreneur.investmentRound.list.label.round = Ronda
+entrepreneur.investmentRound.list.label.title = Titulo
