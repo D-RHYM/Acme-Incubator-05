@@ -184,6 +184,7 @@
         `amount_amount` double precision,
         `amount_currency` varchar(255),
         `description` varchar(255),
+        `final_mode` bit,
         `link` varchar(255),
         `moment` datetime(6),
         `round` integer,

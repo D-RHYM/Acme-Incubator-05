@@ -404,6 +404,7 @@
 		<property name="description" value="Epic description 1"/>
 		<property name="amount" value="250.25 €"/>
 		<property name="link" value="http://link.com"/>
+		<property name="finalMode" value="false" />
 		<property name="entrepreneur">
 			<ref bean="entrepreneur1Entrepreneur"/>
 		</property>
@@ -417,6 +418,7 @@
 		<property name="description" value="Epic description 2"/>
 		<property name="amount" value="232.46 €"/>
 		<property name="link" value="http://link.com"/>
+		<property name="finalMode" value="false" />
 		<property name="entrepreneur">
 			<ref bean="entrepreneur2Entrepreneur"/>
 		</property>

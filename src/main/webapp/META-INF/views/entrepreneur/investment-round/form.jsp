@@ -5,21 +5,33 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-url code="entrepreneur.investmentRound.form.label.ticker" path="ticker"/>
-	<acme:form-url code="entrepreneur.investmentRound.form.label.moment" path="moment"/>
-	<acme:form-url code="entrepreneur.investmentRound.form.label.round" path="round"/>
-	<acme:form-url code="entrepreneur.investmentRound.form.label.title" path="title"/>
-	<acme:form-url code="entrepreneur.investmentRound.form.label.description" path="description"/>
-	<acme:form-url code="entrepreneur.investmentRound.form.label.amount" path="amount"/>
+	<jstl:if test="${command =='create'}">
+	<acme:form-textbox code="entrepreneur.investmentRound.form.label.ticker" path="ticker" placeholder="XXX-YY-NNNNNN"/>
+	</jstl:if>
+	<jstl:if test="${command !='create'}">
+	<acme:form-textbox code="entrepreneur.investmentRound.form.label.ticker" path="ticker" readonly="true" placeholder="XXX-YY-NNNNNN"/>
+	<acme:form-url code="entrepreneur.investmentRound.form.label.moment" path="moment" readonly="true"/>
+	</jstl:if>
+	
+	<acme:form-url code="entrepreneur.investmentRound.form.label.round" path="round" placeholder="SEED, ANGEL, SERIES-A, SERIES-B, SERIES-C, BRIDGE"/>
+	<acme:form-url code="entrepreneur.investmentRound.form.label.title" path="title" placeholder=" "/>
+	<acme:form-url code="entrepreneur.investmentRound.form.label.description" path="description" placeholder=" "/>
+	<acme:form-url code="entrepreneur.investmentRound.form.label.amount" path="amount" placeholder="1 EUR"/>
 	<acme:form-url code="entrepreneur.investmentRound.form.label.link" path="link"/>
-	
-	<a href=/acme-incubator/entrepreneur/activity/list?id=${id}>
-		<acme:message code="entrepreneur.investmentRound.activity.list"/>
-	</a>
-	
-		<br>
-		<br>
-	<acme:form-submit test="${command == 'show'}" code="authenticated.investmentRound.form.button.list-accounting-record"
-		action="/authenticated/accounting-record/list?id=${id}" method="get" />	
-		<acme:form-return code="entrepreneur.investmentRound.form.button.return"/>
+	<jstl:if test="${command !='create'}">
+		<acme:form-url code="entrepreneur.investmentRound.form.label.finalMode" path="finalMode" readonly="true"/>
+	</jstl:if>
+		
+	<acme:form-submit test="${command != 'create'}" code="entrepreneur.investmentRound.activity.list"
+	action="/entrepreneur/activity/list?id=${id}" method="get" />
+	<acme:form-submit test="${command != 'create'}" code="authenticated.investmentRound.form.button.list-accounting-record"
+	action="/authenticated/accounting-record/list?id=${id}" method="get" />
+		
+	<acme:form-submit test="${command == 'show' && finalMode == false}" code="entrepreneur.investmentRound.form.button.update" action="/entrepreneur/investment-round/update"/>
+	<acme:form-submit test="${command == 'show'}" code="entrepreneur.investmentRound.form.button.delete" action="/entrepreneur/investment-round/delete"/>
+	<acme:form-submit test="${command == 'create'}" code="entrepreneur.investmentRound.form.button.create" action="/entrepreneur/investment-round/create"/>
+	<acme:form-submit test="${command == 'update' && finalMode == false}" code="entrepreneur.investmentRound.form.button.update" action="/entrepreneur/investment-round/update"/>
+	<acme:form-submit test="${command == 'delete'}" code="entrepreneur.investmentRound.form.button.delete" action="/entrepreneur/investment-round/delete"/>
+		
+	<acme:form-return code="entrepreneur.investmentRound.form.button.return"/>
 </acme:form>

@@ -124,6 +124,7 @@ master.menu.investor.application  = Listar mis aplicaciones
 master.menu.entrepreneur = Emprendedor
 master.menu.entrepreneur.list-mine-application = Listar mis aplicaciones
 master.menu.entrepreneur.list-investment-round = Listar mis rondas de inversiones
+master.menu.entrepreneur.create-investment-round = Crear ronda de inversion
 
 # master.menu.bookkeeper ######################################################
 
