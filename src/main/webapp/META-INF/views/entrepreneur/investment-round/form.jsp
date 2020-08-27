@@ -5,14 +5,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<jstl:if test="${command =='create'}">
 	<acme:form-textbox code="entrepreneur.investmentRound.form.label.ticker" path="ticker" placeholder="XXX-YY-NNNNNN"/>
-	</jstl:if>
-	<jstl:if test="${command !='create'}">
-	<acme:form-textbox code="entrepreneur.investmentRound.form.label.ticker" path="ticker" readonly="true" placeholder="XXX-YY-NNNNNN"/>
 	<acme:form-url code="entrepreneur.investmentRound.form.label.moment" path="moment" readonly="true"/>
-	</jstl:if>
-	
 	<acme:form-url code="entrepreneur.investmentRound.form.label.round" path="round" placeholder="SEED, ANGEL, SERIES-A, SERIES-B, SERIES-C, BRIDGE"/>
 	<acme:form-url code="entrepreneur.investmentRound.form.label.title" path="title" placeholder=" "/>
 	<acme:form-url code="entrepreneur.investmentRound.form.label.description" path="description" placeholder=" "/>
@@ -26,6 +20,11 @@
 	action="/entrepreneur/activity/list?id=${id}" method="get" />
 	<acme:form-submit test="${command != 'create'}" code="authenticated.investmentRound.form.button.list-accounting-record"
 	action="/authenticated/accounting-record/list?id=${id}" method="get" />
+	
+	<jstl:if test="${comand != 'create' && finalMode == false}">
+		<acme:form-return code="entrepreneur.activity.form.button.create-activity"
+			action="/entrepreneur/activity/create?investmentId=${id}" />
+	</jstl:if>
 		
 	<acme:form-submit test="${command == 'show' && finalMode == false}" code="entrepreneur.investmentRound.form.button.update" action="/entrepreneur/investment-round/update"/>
 	<acme:form-submit test="${command == 'show'}" code="entrepreneur.investmentRound.form.button.delete" action="/entrepreneur/investment-round/delete"/>

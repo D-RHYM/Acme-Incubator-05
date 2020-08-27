@@ -79,54 +79,20 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 		assert errors != null;
 
 		CustomisationParameters customisation = this.repository.findCustomisationParameters();
-		String[] CustomisationParameter;
-		Integer n = 0;
 
 		//Spam title
-		if (!errors.hasErrors("title")) {
-
-			Double spam = Double.valueOf(entity.getTitle().split(" ").length) * customisation.getSpamThreshold() / 100.0;
-			CustomisationParameter = customisation.getSpamWords().split(",");
-
-			for (String s : CustomisationParameter) {
-				String title = entity.getTitle().toLowerCase();
-				int i = title.indexOf(s);
-				while (i != -1) {
-					n++;
-					title = title.substring(i + 1);
-					i = title.indexOf(s);
-				}
-				errors.state(request, n <= spam, "title", "entrepreneur.investmentRound.form.error.spamTitle");
-				if (n > spam) {
-					break;
-				}
-			}
-
+		boolean titleHasErrors = errors.hasErrors("title");
+		if (!titleHasErrors) {
+			errors.state(request, !customisation.isSpam(entity.getTitle()), "title", "entrepreneur.investmentRound.form.error.spamTitle");
 		}
 
 		//Spam description
-		if (!errors.hasErrors("description")) {
-
-			Double spam = Double.valueOf(entity.getDescription().split(" ").length) * customisation.getSpamThreshold() / 100.0;
-			CustomisationParameter = customisation.getSpamWords().split(",");
-
-			for (String s : CustomisationParameter) {
-				String description = entity.getDescription().toLowerCase();
-				int i = description.indexOf(s);
-				while (i != -1) {
-					n++;
-					description = description.substring(i + 1);
-					i = description.indexOf(s);
-				}
-				errors.state(request, n <= spam, "description", "entrepreneur.investmentRound.form.error.spamDescription");
-				if (n > spam) {
-					break;
-				}
-			}
-
+		boolean descriptionHasErrors = errors.hasErrors("description");
+		if (!descriptionHasErrors) {
+			errors.state(request, !customisation.isSpam(entity.getDescription()), "description", "entrepreneur.investmentRound.form.error.spamDescription");
 		}
 
-		//Dinero incorrecta
+		//Dinero incorrecto
 		if (!errors.hasErrors("amount")) {
 			errors.state(request, entity.getAmount().getCurrency().equals("EUR") || entity.getAmount().getCurrency().equals("€"), "amount", "entrepreneur.investmentRound.form.error.amountError");
 		}

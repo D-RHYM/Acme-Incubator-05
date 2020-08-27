@@ -49,26 +49,29 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "moment", "title", "round", "description", "link", "amount", "finalMode");
+		request.unbind(entity, model, "ticker", "moment", "round", "title", "description", "amount", "link", "finalMode");
 
 	}
 
 	@Override
 	public InvestmentRound instantiate(final Request<InvestmentRound> request) {
-		assert request != null;
 
-		InvestmentRound res;
-		res = new InvestmentRound();
-		Principal principal = request.getPrincipal();
-		int id = principal.getAccountId();
-		Entrepreneur entrepreneur = this.repository.findOneEntrepreneurById(id);
-		res.setEntrepreneur(entrepreneur);
+		InvestmentRound result;
+		result = new InvestmentRound();
+		int id;
 		Date moment;
-		moment = new Date();
-		res.setMoment(moment);
-		res.setFinalMode(false);
+		Entrepreneur entrepreneur;
+		Principal principal;
+		principal = request.getPrincipal();
+		id = principal.getActiveRoleId();
+		entrepreneur = this.repository.findOneEntrepreneurById(id);
+		result.setEntrepreneur(entrepreneur);
+		moment = new Date(System.currentTimeMillis() - 1);
 
-		return res;
+		result.setMoment(moment);
+		result.setFinalMode(false);
+
+		return result;
 	}
 
 	@Override
@@ -101,51 +104,17 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		}
 
 		CustomisationParameters customisation = this.repository.findCustomisationParameters();
-		String[] CustomisationParameter;
-		Integer n = 0;
 
 		//Spam title
-		if (!errors.hasErrors("title")) {
-
-			Double spam = Double.valueOf(entity.getTitle().split(" ").length) * customisation.getSpamThreshold() / 100.0;
-			CustomisationParameter = customisation.getSpamWords().split(",");
-
-			for (String s : CustomisationParameter) {
-				String title = entity.getTitle().toLowerCase();
-				int i = title.indexOf(s);
-				while (i != -1) {
-					n++;
-					title = title.substring(i + 1);
-					i = title.indexOf(s);
-				}
-				errors.state(request, n <= spam, "title", "entrepreneur.investmentRound.form.error.spamTitle");
-				if (n > spam) {
-					break;
-				}
-			}
-
+		boolean titleHasErrors = errors.hasErrors("title");
+		if (!titleHasErrors) {
+			errors.state(request, !customisation.isSpam(entity.getTitle()), "title", "entrepreneur.investmentRound.form.error.spamTitle");
 		}
 
 		//Spam description
-		if (!errors.hasErrors("description")) {
-
-			Double spam = Double.valueOf(entity.getDescription().split(" ").length) * customisation.getSpamThreshold() / 100.0;
-			CustomisationParameter = customisation.getSpamWords().split(",");
-
-			for (String s : CustomisationParameter) {
-				String l = entity.getDescription().toLowerCase();
-				int i = l.indexOf(s);
-				while (i != -1) {
-					n++;
-					l = l.substring(i + 1);
-					i = l.indexOf(s);
-				}
-				errors.state(request, n <= spam, "description", "entrepreneur.investmentRound.form.error.spamDescription");
-				if (n > spam) {
-					break;
-				}
-			}
-
+		boolean descriptionHasErrors = errors.hasErrors("description");
+		if (!descriptionHasErrors) {
+			errors.state(request, !customisation.isSpam(entity.getDescription()), "description", "entrepreneur.investmentRound.form.error.spamDescription");
 		}
 
 		//Dinero incorrecto
