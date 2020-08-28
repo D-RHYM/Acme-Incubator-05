@@ -13,6 +13,6 @@ entrepreneur.application.form.error.rejectionJustification = El rechazo ha de es
 entrepreneur.application.form.button.update = Actualizar estado
 
 entrepreneur.application.list.label.ticker = Ticker
-entrepreneur.application.list.label.moneyOffer = Dinero
+entrepreneur.application.list.label.moment = Moment
 
 entrepreneur.investmentRound.form.button.return = Volver
