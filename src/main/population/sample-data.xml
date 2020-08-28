@@ -464,6 +464,8 @@
   		<property name="moment" value="2020/03/26 15:30" />
   		<property name="statement" value="Application 1" />
   		<property name="moneyOffer" value="1400€" />
+  		<property name="status" value="PENDING" />
+  		<property name="justification" value="" />
   		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" /> 
   		<property name="investor" ref="investor1Investor" />
   		<property name="investmentRound" ref="investmentRound1" />
@@ -474,6 +476,8 @@
   		<property name="moment" value="2019/08/25 13:59" />
   		<property name="statement" value="Application 2" />
   		<property name="moneyOffer" value="1000€" />
+  		<property name="status" value="ACCEPTED" />
+  		<property name="justification" value="" />
   		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
   		<property name="investor" ref="investor1Investor" />
   		<property name="investmentRound" ref="investmentRound2" />
@@ -484,6 +488,8 @@
   		<property name="moment" value="2019/03/14 14:15" />
   		<property name="statement" value="Application 3" />
   		<property name="moneyOffer" value="500€" />
+  		<property name="status" value="REJECTED" />
+  		<property name="justification" value="Epic justification" />
   		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" /> 
   		<property name="investor" ref="investor2Investor" />
   		<property name="investmentRound" ref="investmentRound2" />

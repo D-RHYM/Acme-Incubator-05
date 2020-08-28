@@ -40,10 +40,12 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `justification` varchar(255),
         `moment` datetime(6),
         `money_offer_amount` double precision,
         `money_offer_currency` varchar(255),
         `statement` varchar(255),
+        `status` integer,
         `ticker` varchar(255),
         `entrepreneur_id` integer not null,
         `investment_round_id` integer not null,
@@ -305,6 +307,7 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
