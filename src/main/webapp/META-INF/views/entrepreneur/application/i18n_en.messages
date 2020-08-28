@@ -4,6 +4,6 @@ entrepreneur.application.form.label.statement = Statement
 entrepreneur.application.form.label.moneyOffer = Money Offer
 
 entrepreneur.application.list.label.ticker = Ticker
-entrepreneur.application.list.label.moneyOffer = Money Offer
+entrepreneur.application.list.label.moment = Moment
 
 entrepreneur.investmentRound.form.button.return = Return
