@@ -12,5 +12,9 @@ investor.application.form.label.justification = Justification
 
 investor.application.list.label.ticker = Ticker
 investor.application.list.label.moneyOffer = Money Offer
+investor.application.list.label.status = Status
 
 investor.application.form.button.return = Return
+investor.application.form.button.create = Create
+
+investor.application.form.message.ticker = The ticker must follow the pattern XXX-YY-NNNNNN

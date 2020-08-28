@@ -37,7 +37,7 @@ public class Application extends DomainEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")
+	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{investor.application.form.message.ticker}")
 	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)

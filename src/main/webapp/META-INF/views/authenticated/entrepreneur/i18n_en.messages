@@ -7,4 +7,4 @@ authenticated.entrepreneur.form.button.create = Create
 authenticated.entrepreneur.form.button.update = Update
 authenticated.entrepreneur.form.button.return = Return
 
-authenticated.entrepreneur.error.sector = The value must be Software, TI, Computers or Health
+authenticated.entrepreneur.error.sector = The value must be Software, Tech, Computers or Health

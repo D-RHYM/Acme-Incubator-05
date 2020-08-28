@@ -14,5 +14,6 @@ entrepreneur.application.form.button.update = Update status
 
 entrepreneur.application.list.label.ticker = Ticker
 entrepreneur.application.list.label.moment = Moment
+entrepreneur.application.list.label.status = Status
 
 entrepreneur.investmentRound.form.button.return = Return

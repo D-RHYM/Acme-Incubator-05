@@ -8,9 +8,8 @@ investor.investmentRound.form.label.link = Enlace:
 
 investor.investmentRound.form.button.return = Volver
 investor.application.create = Solicitar para esta ronda de inversión
+investor.application.exist = Esta ronda de inversiones tiene aplicaciones
 
 investor.investmentRound.list.label.ticker = Ticker
 investor.investmentRound.list.label.round = Ronda
 investor.investmentRound.list.label.title = Titulo
-
-investor.application.exist = Esta ronda de inversion ya esta solicitada

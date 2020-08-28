@@ -21,7 +21,7 @@
 	<acme:form-submit test="${command != 'create'}" code="authenticated.investmentRound.form.button.list-accounting-record"
 	action="/authenticated/accounting-record/list?id=${id}" method="get" />
 	
-	<jstl:if test="${comand != 'create' && finalMode == false}">
+	<jstl:if test="${command != 'create' && finalMode == false}">
 		<acme:form-return code="entrepreneur.activity.form.button.create-activity"
 			action="/entrepreneur/activity/create?investmentId=${id}" />
 	</jstl:if>

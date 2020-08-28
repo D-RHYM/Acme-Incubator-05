@@ -8,9 +8,8 @@ investor.investmentRound.form.label.link = Link:
 
 investor.investmentRound.form.button.return = Return
 investor.application.create = Apply for this investment round
+investor.application.exist = This investment round has applications
 
 investor.investmentRound.list.label.ticker = Ticker
 investor.investmentRound.list.label.round = Round
 investor.investmentRound.list.label.title = Title
-
-investor.application.exist = This investment round is already apply

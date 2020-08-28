@@ -77,7 +77,7 @@ public class AuthenticatedEntrepreneurUpdateService implements AbstractUpdateSer
 		assert errors != null;
 
 		if (!errors.hasErrors("sector")) {
-			Boolean sectorErr = entity.getSector().equalsIgnoreCase("Software") || entity.getSector().equalsIgnoreCase("Computers") || entity.getSector().equalsIgnoreCase("TI") || entity.getSector().equalsIgnoreCase("Health");
+			Boolean sectorErr = entity.getSector().equalsIgnoreCase("Software") || entity.getSector().equalsIgnoreCase("Computers") || entity.getSector().equalsIgnoreCase("Tech") || entity.getSector().equalsIgnoreCase("Health");
 			errors.state(request, sectorErr, "sector", "authenticated.entrepreneur.error.sector", entity.getSector());
 		}
 

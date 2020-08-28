@@ -12,10 +12,10 @@
 	<acme:form-url code="investor.investmentRound.form.label.amount" path="amount"/>
 	<acme:form-url code="investor.investmentRound.form.label.link" path="link"/>
 	
-	<jstl:if test="${totalApplications == 0}">
+	<jstl:if test="${totalApps == 0}">
 		<acme:form-return code="investor.application.create" action="/investor/application/create?investId=${id}"/>
 	</jstl:if>
-	<jstl:if test="${totalApplications != 0}">
+	<jstl:if test="${totalApps != 0}">
 		<acme:message code="investor.application.exist"/>
 	</jstl:if>
 	

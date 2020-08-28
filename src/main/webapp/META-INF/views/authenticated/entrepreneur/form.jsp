@@ -6,7 +6,7 @@
 <acme:form>
 
 	<acme:form-textbox code="authenticated.entrepreneur.form.label.name" path="name"/>
-	<acme:form-textbox code="authenticated.entrepreneur.form.label.sector" path="sector" placeholder="Software, Computers, TI, Health"/>
+	<acme:form-textbox code="authenticated.entrepreneur.form.label.sector" path="sector" placeholder="Software, Computers, Tech, Health"/>
 	<acme:form-textbox code="authenticated.entrepreneur.form.label.qualificationRecord" path="qualificationRecord"/>
 	<acme:form-textbox code="authenticated.entrepreneur.form.label.skillsRecord" path="skillsRecord"/>
 

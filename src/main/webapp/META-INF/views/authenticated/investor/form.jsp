@@ -6,7 +6,7 @@
 <acme:form>
 
 	<acme:form-textbox code="authenticated.investor.form.label.name" path="name"/>
-	<acme:form-textbox code="authenticated.investor.form.label.sector" path="sector" placeholder="Software, Computers, TI, Health"/>
+	<acme:form-textbox code="authenticated.investor.form.label.sector" path="sector" placeholder="Software, Computers, Tech, Health"/>
 	<acme:form-textbox code="authenticated.investor.form.label.profile" path="profile"/>
 
 	<acme:form-submit test="${command == 'create'}" code="authenticated.investor.form.button.create" action="/authenticated/investor/create"/>
