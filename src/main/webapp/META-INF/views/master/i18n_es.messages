@@ -117,6 +117,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 # master.menu.investor ###########################################################
 
 master.menu.investor = Inversor
+master.menu.investor.investementRound = Rondas de inversiones
 master.menu.investor.application  = Listar mis aplicaciones
 
 # master.menu.entrepreneur ######################################################
