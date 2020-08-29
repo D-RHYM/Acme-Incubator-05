@@ -573,8 +573,8 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1155</x>
-      <y>497</y>
+      <x>1190</x>
+      <y>609</y>
       <w>231</w>
       <h>98</h>
     </coordinates>
@@ -591,8 +591,8 @@ AccountingRecord
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1169</x>
-      <y>371</y>
+      <x>1204</x>
+      <y>294</y>
       <w>203</w>
       <h>63</h>
     </coordinates>
@@ -606,38 +606,269 @@ Bookkeeper
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1267</x>
-      <y>427</y>
-      <w>28</w>
-      <h>84</h>
+      <x>1302</x>
+      <y>350</y>
+      <w>77</w>
+      <h>273</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
 m1=*
-m2=1</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+m2=1
+created by &gt;</panel_attributes>
+    <additional_attributes>10.0;370.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>966</x>
+      <x>959</x>
       <y>203</y>
-      <w>238</w>
-      <h>182</h>
+      <w>280</w>
+      <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;320.0;240.0</additional_attributes>
+    <additional_attributes>10.0;10.0;380.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>532</x>
+      <y>280</y>
+      <w>154</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+AccountingRecordStatus
+--
++ DRAFT
++ PUBLISHED
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>749</x>
+      <y>294</y>
+      <w>182</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Entrepreneur
+--
++ name: String {NotBlank}
++ sector: String {NotBlank}
++ qualificationRecord: String {NotBlank}
++ skillsRecord: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1071</x>
-      <y>539</y>
-      <w>98</w>
-      <h>28</h>
+      <x>833</x>
+      <y>203</y>
+      <w>147</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>525</x>
+      <y>609</y>
+      <w>441</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+InvestmentRound
+--
++ ticker: String {NotBlank, Column(unique = true, Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$"))}
++ moment: Date {Temporal(TIMESTAMP), Past}
++ round: String {NotBlank}
++ title: String {NotBlank}
++ description: String {NotBlank}
++ amount: Money {Valid, NotNull}
++ link: String {URL}
++ entrepreneur: Entrepreneur {ManyToOne(optional = false), Valid}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>42</x>
+      <y>630</y>
+      <w>378</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Activity
+--
++ title: String {NotBlank}
++ moment: Date {NotNull, Temporal(TIMESTAMP), past}
++ deadline: Date {NotNull, Temporal(TIMESTAMP)}
++ budget: Money {NotNull, Valid}
++ investmentRound: investmentRound {ManyToOne(optional = false), NotNull, Valid}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>966</x>
+      <y>294</y>
+      <w>182</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Investor
+--
++ name: String {NotBlank}
++ sector: String {NotBlank}
++ profile: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>959</x>
+      <y>203</y>
+      <w>112</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>749</x>
+      <y>371</y>
+      <w>77</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>lt=x-&gt;
-m1=*
-m2=1</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+m1=0..n
+m2=1
+created by ^</panel_attributes>
+    <additional_attributes>10.0;340.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>413</x>
+      <y>665</y>
+      <w>126</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..n
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;160.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>840</x>
+      <y>434</y>
+      <w>378</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Application
+--
++ ticker: String {NotBlank, Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")}
++ moment: Date {Past, Temporal(TIMESTAMP)}
++ statement: String {NotBlank}
++ moneyOffer: Money {NotNull, Valid}
++ status: Status {NotNull}
++ investmentRound: InvestmentRound {ManyToOne(optional = false), NotNull, Valid}
++ investor: Investor {ManyToOne(optional = false), NotNull, Valid}
++ justification: String {Size(max = 255)}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1015</x>
+      <y>378</y>
+      <w>77</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..n
+m2=1
+created by ^</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>861</x>
+      <y>371</y>
+      <w>84</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..n
+m2=1
+accepted by ^</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>854</x>
+      <y>553</y>
+      <w>49</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..n
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>959</x>
+      <y>651</y>
+      <w>245</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=x-&gt;
+m1=0..n
+m2=1
+has &gt;</panel_attributes>
+    <additional_attributes>330.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1323</x>
+      <y>140</y>
+      <w>238</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+BookkeeperRequest
+--
++ firm: String {NotBlank}
++ responsibilityStatement: String {NotBlank}
++ status: BookkeeperRequestStatus {NotNull}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1043</x>
+      <y>189</y>
+      <w>294</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
   </element>
 </diagram>
