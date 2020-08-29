@@ -1,10 +1,11 @@
 
-package acme.features.authenticated.accountingRecords;
+package acme.features.authenticated.accountingRecord;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.accountingRecords.AccountingRecord;
+import acme.entities.accountingRecord.AccountingRecord;
+import acme.entities.accountingRecord.AccountingRecordStatus;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -21,7 +22,11 @@ public class AuthenticatedAccountingRecordShowService implements AbstractShowSer
 	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		boolean result = request.getPrincipal().hasRole(Authenticated.class);
+		int accountingRecordId = request.getModel().getInteger("id");
+		AccountingRecord accountingRecord = this.repository.findOneById(accountingRecordId);
+
+		boolean result = accountingRecord.getStatus() == AccountingRecordStatus.PUBLISHED;
+
 		return result;
 	}
 
@@ -31,8 +36,7 @@ public class AuthenticatedAccountingRecordShowService implements AbstractShowSer
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "body");
-
+		request.unbind(entity, model, "title", "creationMoment", "body");
 	}
 
 	@Override
@@ -43,7 +47,7 @@ public class AuthenticatedAccountingRecordShowService implements AbstractShowSer
 		int id;
 
 		id = request.getModel().getInteger("id");
-		result = this.repository.findOneAccountingRecordById(id);
+		result = this.repository.findOneById(id);
 
 		return result;
 	}

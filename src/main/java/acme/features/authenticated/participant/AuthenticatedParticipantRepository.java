@@ -17,10 +17,10 @@ public interface AuthenticatedParticipantRepository extends AbstractRepository {
 	@Query("select p from Participant p where p.id = ?1")
 	Participant findOneById(int id);
 
-	@Query("select mt from DiscussionForum mt where mt.id = ?1")
+	@Query("select df from DiscussionForum df where df.id = ?1")
 	DiscussionForum findOneDiscussionForumById(int discussionForumId);
 
-	@Query("select count(mt)>0 from DiscussionForum mt where mt.id = ?1 and mt.creator.id = ?2")
+	@Query("select count(df)>0 from DiscussionForum df where df.id = ?1 and df.creator.id = ?2")
 	Boolean findIsForumCreator(int discussionForumId, int creatorId);
 
 	@Query("select count(p)>0 from Participant p where p.discussionForum.id = ?1 and p.authenticated.id = ?2")
