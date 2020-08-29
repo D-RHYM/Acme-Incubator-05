@@ -17,10 +17,10 @@
 	</acme:form-select>
 	<acme:form-textarea code="bookkeeper.accounting-record.form.label.body" path="body" />
 
-	<acme:form-submit test="${command == 'create'}" code="bookkeeper.accounting-record.form.button.create" action="create" />
+	<acme:form-submit test="${command == 'create'}" code="bookkeeper.accounting-record.form.button.create" action="/bookkeeper/accounting-record/create?investId=${investId}" />
 	<acme:form-submit test="${(command == 'show' && status == 'DRAFT') || command == 'update'}" code="bookkeeper.accounting-record.form.button.update"
 		action="update" />
-	<acme:form-submit test="${command != create}" code="bookkeeper.accounting-record.form.button.show-job"
+	<acme:form-submit test="${command != 'create'}" code="bookkeeper.accounting-record.form.button.show-investment-round"
 		action="/bookkeeper/investment-round/show?id=${requestScope['investmentRound.id']}" method="get" />
 	<acme:form-return code="bookkeeper.accounting-record.form.button.return" />
 </acme:form>

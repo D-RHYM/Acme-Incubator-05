@@ -130,8 +130,9 @@ master.menu.entrepreneur.list-investment-round = Listar mis rondas de inversione
 # master.menu.bookkeeper ######################################################
 
 master.menu.bookkeeper = Contable
-master.menu.bookkeeper.list-investment-round = Listar mis rondas de inversiones
-master.menu.bookkeeper.list-not-investment-round = Listar rondas de inversiones ajenas
+master.menu.bookkeeper.accounting-record.list = Listar mis registros de contabilidad
+master.menu.bookkeeper.list-investment-round = Listar rondas de inversiones registradas
+master.menu.bookkeeper.list-not-investment-round = Listar rondas de inversiones no registradas
 
 # master.menu.user-account ####################################################
 

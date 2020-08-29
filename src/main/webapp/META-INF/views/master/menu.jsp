@@ -89,8 +89,6 @@
 			<acme:menu-suboption code="master.menu.administrator.create-inquirie" action="/administrator/inquirie/create"/>
 			<acme:menu-suboption code="master.menu.administrator.list-inquirie" action="/administrator/inquirie/list"/>
 			<acme:menu-separator/>
-			
-			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
 		</acme:menu-option>
 

@@ -5,4 +5,4 @@ authenticated.accounting-record.form.label.body = Body
 authenticated.accounting-record.form.button.return = Return
 
 authenticated.accounting-record.list.label.title = Title
-authenticated.accounting-record.list.label.moment = Creation Moment
+authenticated.accounting-record.list.label.creationMoment = Creation Moment

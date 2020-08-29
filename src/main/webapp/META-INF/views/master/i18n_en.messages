@@ -128,8 +128,9 @@ master.menu.entrepreneur.list-investment-round = List my investment rounds
 # master.menu.bookkeeper ######################################################
 
 master.menu.bookkeeper = Bookkeeper
-master.menu.bookkeeper.list-investment-round = List my investment rounds
-master.menu.bookkeeper.list-not-investment-round = List not my investment rounds
+master.menu.bookkeeper.accounting-record.list = List my accounting records
+master.menu.bookkeeper.list-investment-round = List investment rounds accounted
+master.menu.bookkeeper.list-not-investment-round = List investment rounds not accounted
 
 # master.menu.user-account ####################################################
 
