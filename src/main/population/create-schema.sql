@@ -40,10 +40,12 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `justification` varchar(255),
         `moment` datetime(6),
         `money_offer_amount` double precision,
         `money_offer_currency` varchar(255),
         `statement` varchar(255),
+        `status` integer,
         `ticker` varchar(255),
         `entrepreneur_id` integer not null,
         `investment_round_id` integer not null,
@@ -194,6 +196,7 @@
         `amount_amount` double precision,
         `amount_currency` varchar(255),
         `description` varchar(255),
+        `final_mode` bit,
         `link` varchar(255),
         `moment` datetime(6),
         `round` integer,
@@ -314,6 +317,7 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 create index IDXhwforwdu8n1h9l7gxea3vxdvj on `accounting_record` (`status`);
 
     alter table `user_account` 

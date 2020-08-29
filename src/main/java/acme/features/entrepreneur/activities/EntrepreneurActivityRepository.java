@@ -18,4 +18,7 @@ public interface EntrepreneurActivityRepository extends AbstractRepository {
 	@Query("select a from Activity a where a.id =?1")
 	Activity findOneById(int id);
 
+	@Query("select a.budget.amount from Activity a where a.id =?1")
+	int findOneBudgetByActivityId(int id);
+
 }

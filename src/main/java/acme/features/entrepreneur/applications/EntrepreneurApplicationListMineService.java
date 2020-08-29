@@ -34,7 +34,7 @@ public class EntrepreneurApplicationListMineService implements AbstractListServi
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "moneyOffer");
+		request.unbind(entity, model, "ticker", "moment", "status");
 
 	}
 

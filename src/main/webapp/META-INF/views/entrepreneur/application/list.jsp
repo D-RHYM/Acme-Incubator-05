@@ -5,5 +5,6 @@
 
 <acme:list>
 	<acme:list-column code="entrepreneur.application.list.label.ticker" path="ticker" width="40%" />
-	<acme:list-column code="entrepreneur.application.list.label.moneyOffer" path="moneyOffer" width="40%" />
+	<acme:list-column code="entrepreneur.application.list.label.moment" path="moment" width="40%" />
+	<acme:list-column code="entrepreneur.application.list.label.status" path="status" width="40%" />
 </acme:list>

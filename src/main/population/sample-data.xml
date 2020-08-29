@@ -397,26 +397,28 @@
 	<!-- Investment Rounds  -->
 	
 	<bean id="investmentRound1" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="DCR-02-592214"/>
+		<property name="ticker" value="SOF-19-592214"/>
 		<property name="moment" value="2020/07/30 15:30"/>
 		<property name="round" value="ANGEL"/>
 		<property name="title" value="Investment 1"/>
 		<property name="description" value="Epic description 1"/>
 		<property name="amount" value="250.25 €"/>
 		<property name="link" value="http://link.com"/>
+		<property name="finalMode" value="false" />
 		<property name="entrepreneur">
 			<ref bean="entrepreneur1Entrepreneur"/>
 		</property>
 	</bean>
 	
 	<bean id="investmentRound2" class="acme.entities.investmentRounds.InvestmentRound">
-		<property name="ticker" value="AGM-06-114631"/>
+		<property name="ticker" value="SOF-19-114631"/>
 		<property name="moment" value="2019/09/13 16:45"/>
 		<property name="round" value="SERIES_A"/>
 		<property name="title" value="Investment 2"/>
 		<property name="description" value="Epic description 2"/>
 		<property name="amount" value="232.46 €"/>
 		<property name="link" value="http://link.com"/>
+		<property name="finalMode" value="false" />
 		<property name="entrepreneur">
 			<ref bean="entrepreneur2Entrepreneur"/>
 		</property>
@@ -470,30 +472,36 @@
 	<!-- Applications -->
 	
   	<bean name="application1" class="acme.entities.applications.Application">
-  		<property name="ticker" value="FAL-00-698032" />
+  		<property name="ticker" value="SOF-20-698032" />
   		<property name="moment" value="2020/03/26 15:30" />
   		<property name="statement" value="Application 1" />
   		<property name="moneyOffer" value="1400€" />
+  		<property name="status" value="PENDING" />
+  		<property name="justification" value="" />
   		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" /> 
   		<property name="investor" ref="investor1Investor" />
   		<property name="investmentRound" ref="investmentRound1" />
   	</bean>
   	
   	<bean name="application2" class="acme.entities.applications.Application">
-  		<property name="ticker" value="JPM-32-826016" />
+  		<property name="ticker" value="SOF-20-826016" />
   		<property name="moment" value="2019/08/25 13:59" />
   		<property name="statement" value="Application 2" />
   		<property name="moneyOffer" value="1000€" />
+  		<property name="status" value="ACCEPTED" />
+  		<property name="justification" value="" />
   		<property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
   		<property name="investor" ref="investor1Investor" />
   		<property name="investmentRound" ref="investmentRound2" />
   	</bean>
   	
   	<bean name="application3" class="acme.entities.applications.Application">
-  		<property name="ticker" value="DNA-32-391683" />
+  		<property name="ticker" value="SOF-19-391683" />
   		<property name="moment" value="2019/03/14 14:15" />
   		<property name="statement" value="Application 3" />
   		<property name="moneyOffer" value="500€" />
+  		<property name="status" value="REJECTED" />
+  		<property name="justification" value="Epic justification" />
   		<property name="entrepreneur" ref="entrepreneur2Entrepreneur" /> 
   		<property name="investor" ref="investor2Investor" />
   		<property name="investmentRound" ref="investmentRound2" />

@@ -4,7 +4,9 @@ package acme.entities.applications;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Index;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -23,6 +25,9 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Table(indexes = {
+	@Index(columnList = "status")
+})
 public class Application extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
@@ -32,7 +37,7 @@ public class Application extends DomainEntity {
 	// Attributes -------------------------------------------------------------
 
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")
+	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{investor.application.form.message.ticker}")
 	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -45,6 +50,12 @@ public class Application extends DomainEntity {
 	@Valid
 	@NotNull
 	private Money				moneyOffer;
+
+	@NotNull
+	private Status				status;
+
+	private String				justification;
+
 	// Relationships ----------------------------------------------------------
 
 	@NotNull

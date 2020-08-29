@@ -75,6 +75,7 @@ master.menu.authenticated.list-tool-record = List Tool Records
 
 master.menu.authenticated.list-investment-round = List Investment Rounds
 master.menu.authenticated.list-my-discussion-forum = List my discussions forums
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -117,6 +118,7 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.investor ###########################################################
 
 master.menu.investor = Investor
+master.menu.investor.investementRound = Investment rounds
 master.menu.investor.application  = List my applications
 
 # master.menu.entrepreneur ######################################################
@@ -124,6 +126,7 @@ master.menu.investor.application  = List my applications
 master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.list-mine-application = List my applications
 master.menu.entrepreneur.list-investment-round = List my investment rounds
+master.menu.entrepreneur.create-investment-round = Create investment round
 
 # master.menu.bookkeeper ######################################################
 
@@ -140,6 +143,10 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.entrepreneur = Entrepreneur data
+master.menu.user-account.become-entrepreneur = Become an entrepreneur
+master.menu.user-account.investor = Investor data
+master.menu.user-account.become-investor = Become an investor
 
 master.menu.user-account.bookkeeper-request = Send request to become a bookkeeper
 
