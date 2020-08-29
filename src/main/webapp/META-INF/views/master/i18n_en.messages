@@ -100,6 +100,8 @@ master.menu.administrator.create-overture = Create overture
 master.menu.administrator.create-techRecord = Create tech record
 master.menu.administrator.list-techRecord = List tech records
 
+master.menu.administrator.list-bookkeeper-requests = List bookkeepers requests
+
 master.menu.administrator.dashboard = Dashboard
 
 # master.menu.provider ########################################################
@@ -137,6 +139,8 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+master.menu.user-account.bookkeeper-request = Send request to become a bookkeeper
 
 # master.footer ###############################################################
 

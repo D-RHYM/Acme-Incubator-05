@@ -17,8 +17,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="authenticated.accounting-record.list.label.title" path="title" width="10%" />
-	<acme:list-column code="authenticated.accounting-record.list.label.moment" path="moment" width="90%" />
+	<acme:list-column code="authenticated.accounting-record.list.label.creationMoment" path="creationMoment" width="15%" />
+	<acme:list-column code="authenticated.accounting-record.list.label.title" path="title" width="85%" />
 </acme:list>
 
 

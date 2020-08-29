@@ -422,6 +422,18 @@
 		</property>
 	</bean>
 	
+	<bean id="investmentRound3" class="acme.entities.investmentRounds.InvestmentRound">
+		<property name="ticker" value="LFP-02-592214"/>
+		<property name="moment" value="2020/06/30 15:30"/>
+		<property name="round" value="ANGEL"/>
+		<property name="title" value="Investment 3"/>
+		<property name="description" value="Epic description 3"/>
+		<property name="amount" value="111.25 €"/>
+		<property name="link" value="http://link.com"/>
+		<property name="entrepreneur">
+			<ref bean="entrepreneur1Entrepreneur"/>
+		</property>
+	</bean>
 
 	<!-- Activities  -->
 	
@@ -652,30 +664,30 @@
 	
 		<!-- Accounting Records -->
 	
-	<bean id="accountingRecord1" class="acme.entities.accountingRecords.AccountingRecord">
+	<bean id="accountingRecord1" class="acme.entities.accountingRecord.AccountingRecord">
 		<property name="title" value="A good Title"/>
-		<property name="moment" value="2020/03/24 10:30"/>
-		<property name="status" value="PUBLISHED"/>
+		<property name="creationMoment" value="2020/03/24 10:30"/>
+		<property name="status" value="DRAFT"/>
 		<property name="body" value="This is a test accounting record"/>
 		<property name="investmentRound" ref="investmentRound1" />
-		<property name="creator" ref="bookkeeper1Bookkeeper" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
 	</bean>
 	
-	<bean id="accountingRecord2" class="acme.entities.accountingRecords.AccountingRecord">
+	<bean id="accountingRecord2" class="acme.entities.accountingRecord.AccountingRecord">
 		<property name="title" value="A good Title 2"/>
-		<property name="moment" value="2020/03/24 15:30"/>
+		<property name="creationMoment" value="2020/03/24 15:30"/>
 		<property name="status" value="PUBLISHED"/>
 		<property name="body" value="This is a test accounting record for the same investment round"/>
-		<property name="investmentRound" ref="investmentRound1" />
-		<property name="creator" ref="bookkeeper2Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound2" />
+		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
 	</bean>
-		<bean id="accountingRecord3" class="acme.entities.accountingRecords.AccountingRecord">
+		<bean id="accountingRecord3" class="acme.entities.accountingRecord.AccountingRecord">
 		<property name="title" value="A good Title 3"/>
-		<property name="moment" value="2020/01/14 10:30"/>
+		<property name="creationMoment" value="2020/01/14 10:30"/>
 		<property name="status" value="PUBLISHED"/>
 		<property name="body" value="This is the last test accounting record for the same investment round"/>
-		<property name="investmentRound" ref="investmentRound1" />
-		<property name="creator" ref="bookkeeper2Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound2" />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
 	</bean>
 	
 </beans>	

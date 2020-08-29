@@ -65,6 +65,8 @@
 			<acme:menu-suboption code="master.menu.administrator.list-customisation-parameters"
 				action="/administrator/customisation-parameters/list" />
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.list-bookkeeper-requests" action="/administrator/bookkeeper-request/list" />
+			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.create-notice" action="/administrator/notice/create"/>
@@ -110,6 +112,7 @@
 		</acme:menu-option>
 		
 			<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
+			<acme:menu-suboption code="master.menu.bookkeeper.accounting-record.list" action="/bookkeeper/accounting-record/list" />
 			<acme:menu-suboption code="master.menu.bookkeeper.list-investment-round" action="/bookkeeper/investment-round/list_mine"/>
 			<acme:menu-suboption code="master.menu.bookkeeper.list-not-investment-round" action="/bookkeeper/investment-round/list_not_mine"/>
 		</acme:menu-option>
@@ -122,6 +125,9 @@
 
 		<acme:menu-option code="master.menu.user-account" access="isAuthenticated()">
 		
+		
+			<acme:menu-suboption code="master.menu.user-account.bookkeeper-request" action="/authenticated/bookkeeper-request/create"
+				access="!hasRole('Bookkeeper')" />
 			<acme:menu-suboption code="master.menu.user-account.general-data" action="/authenticated/user-account/update"/>
 			<acme:menu-suboption code="master.menu.user-account.become-provider" action="/authenticated/provider/create" access="!hasRole('Provider')"/>
 			<acme:menu-suboption code="master.menu.user-account.provider" action="/authenticated/provider/update" access="hasRole('Provider')"/>

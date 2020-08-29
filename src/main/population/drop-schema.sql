@@ -1,7 +1,7 @@
 
     alter table `accounting_record` 
        drop 
-       foreign key `FK1ael07h1c59wo1efugbs4nlgc`;
+       foreign key `FK41jm4vk7runvmg5tderffrele`;
 
     alter table `accounting_record` 
        drop 
@@ -42,6 +42,10 @@
     alter table `bookkeeper` 
        drop 
        foreign key FK_krvjp9eaqyapewl2igugbo9o8;
+
+    alter table `bookkeeper_request` 
+       drop 
+       foreign key `FKrkmyfaktfktoo2v26a9qu4ebb`;
 
     alter table `consumer` 
        drop 
@@ -102,6 +106,8 @@
     drop table if exists `banner`;
 
     drop table if exists `bookkeeper`;
+
+    drop table if exists `bookkeeper_request`;
 
     drop table if exists `caceres_bulletin`;
 
