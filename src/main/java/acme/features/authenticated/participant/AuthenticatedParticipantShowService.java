@@ -25,7 +25,7 @@ public class AuthenticatedParticipantShowService implements AbstractShowService<
 		Participant participant = this.repository.findOneById(participantId);
 		int discussionForumId = participant.getDiscussionForum().getId();
 		int authenticatedId = request.getPrincipal().getActiveRoleId();
-		boolean result = this.repository.findIsForumParticipant(discussionForumId, authenticatedId);
+		boolean result = this.repository.findIsForumParticipant(discussionForumId, authenticatedId) || participant.getDiscussionForum().getCreator().getId() == authenticatedId;
 
 		return result;
 	}

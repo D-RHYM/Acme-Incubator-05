@@ -19,7 +19,17 @@
 	
 		<br>
 		<br>
-	<acme:form-submit test="${command == 'show'}" code="bookkeeper.investmentRound.form.button.list-accounting-record"
-		action="/authenticated/accounting-record/list?id=${id}" method="get" />	
+			<jstl:choose>
+		<jstl:when test="${accountingRecordId != null}">
+			<acme:form-submit code="bookkeeper.investmentRound.form.button.show-accounting-record" action="/bookkeeper/accounting-record/show?id=${accountingRecordId}" method="get" />
+		</jstl:when>
+		<jstl:otherwise>
+			<acme:form-submit code="bookkeeper.investmentRound.form.button.create-accounting-record" action="/bookkeeper/accounting-record/create?investId=${id}" method="get" />
+		</jstl:otherwise>
+	</jstl:choose>
+	<acme:form-submit code="bookkeeper.investmentRound.form.button.list-accounting-record" action="/authenticated/accounting-record/list?id=${id}" method="get" />
+
+		<acme:form-submit test="${command == 'show'}"
+		code="authenticated.investmentRound.form.button.create-forum" action="/authenticated/discussion-forum/create?investId=${id}" method="get" />
 		<acme:form-return code="bookkeeper.investmentRound.form.button.return"/>
 </acme:form>

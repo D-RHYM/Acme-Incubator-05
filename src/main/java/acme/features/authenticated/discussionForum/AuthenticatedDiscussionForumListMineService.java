@@ -42,26 +42,6 @@ public class AuthenticatedDiscussionForumListMineService implements AbstractList
 	@Override
 	public Collection<DiscussionForum> findMany(final Request<DiscussionForum> request) {
 		assert request != null;
-		/*
-		 * List<DiscussionForum> lista = new ArrayList<>();
-		 * Collection<DiscussionForum> res;
-		 * int id = request.getPrincipal().getActiveRoleId();
-		 * if (request.getPrincipal().hasRole(Entrepreneur.class)) {
-		 * lista = this.repository.findDiscussionForumsByEntrepreneurId(id).stream().distinct().collect(Collectors.toList());
-		 * } else if (request.getPrincipal().hasRole(Investor.class)) {
-		 * Collection<Application> listaApplication = this.repository.findApplicationByInvestorId(id);
-		 * for (Application a : listaApplication) {
-		 * for (DiscussionForum d : this.repository.findManyAll()) {
-		 * if (a.getInvestmentRound().getId() == d.getInvestmentRound().getId()) {
-		 * lista.add(d);
-		 * }
-		 * }
-		 * }
-		 * } else {
-		 * lista = this.repository.findManyAll().stream().filter(d -> d.getCreator().getId() == request.getPrincipal().getActiveRoleId()).collect(Collectors.toList());
-		 * }
-		 * res = lista;
-		 */
 
 		Collection<DiscussionForum> result;
 		Principal principal;
