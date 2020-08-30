@@ -1,6 +1,7 @@
 authenticated.discussion-forum.form.label.investmentRound.title = Ronda de inversion:
 authenticated.discussion-forum.form.label.creator = Creado por
 
+authenticated.discussion-forum.form.error.existing = Hay un foro de discusión activo para esta ronda de inversiones en este momento
 authenticated.discussion-forum.form.button.list-messages = Listar mensajes
 authenticated.discussion-forum.form.button.add-message = Publicar nuevo mensaje
 authenticated.discussion-forum.form.button.return = Volver

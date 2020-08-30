@@ -26,8 +26,7 @@ public class BookkeeperAccountingRecordCreateService implements AbstractCreateSe
 	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		int investId = request.getModel().getInteger("investId");
-		boolean result = !this.repository.findExistsAccountingRecordByBookkeeperIdInvestmentRoundId(request.getPrincipal().getActiveRoleId(), investId);
+		boolean result = request.getPrincipal().hasRole(Bookkeeper.class);
 		return result;
 	}
 
@@ -76,6 +75,13 @@ public class BookkeeperAccountingRecordCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert errors != null;
 
+		int id = request.getModel().getInteger("investId");
+		boolean result = !this.repository.findExistsAccountingRecordByBookkeeperIdInvestmentRoundId(request.getPrincipal().getActiveRoleId(), id);
+
+		boolean titleHasErrors = errors.hasErrors("title");
+		if (!titleHasErrors) {
+			errors.state(request, result, "title", "bookkeeper.accounting-record.form.error.existing");
+		}
 	}
 
 	@Override

@@ -23,8 +23,7 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 	public boolean authorise(final Request<DiscussionForum> request) {
 		assert request != null;
 
-		int id = request.getModel().getInteger("investId");
-		boolean result = this.repository.findManyByInvestmentRoundId(id).isEmpty() && request.getPrincipal().hasRole(Authenticated.class);
+		boolean result = request.getPrincipal().hasRole(Authenticated.class);
 
 		return result;
 	}
@@ -68,6 +67,14 @@ public class AuthenticatedDiscussionForumCreateService implements AbstractCreate
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		int id = request.getModel().getInteger("investId");
+		boolean result = this.repository.findManyByInvestmentRoundId(id).isEmpty();
+
+		boolean titleHasErrors = errors.hasErrors("investmentRound.title");
+		if (!titleHasErrors) {
+			errors.state(request, result, "investmentRound.title", "authenticated.discussion-forum.form.error.existing");
+		}
 
 	}
 

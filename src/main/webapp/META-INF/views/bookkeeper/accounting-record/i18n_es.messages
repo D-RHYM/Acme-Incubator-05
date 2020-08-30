@@ -8,7 +8,7 @@ bookkeeper.accounting-record.form.label.body = Cuerpo
 bookkeeper.accounting-record.form.label.status = Estado
 bookkeeper.accounting-record.form.label.status.draft = Borrador
 bookkeeper.accounting-record.form.label.status.published = Publicado
-
+bookkeeper.accounting-record.form.error.existing = Ya tienes un registro de contabilidad para esta ronda de inversiones
 bookkeeper.accounting-record.form.button.show-investment-round = Mostrar ronda de inversiones
 bookkeeper.accounting-record.form.button.create = Crear
 bookkeeper.accounting-record.form.button.update = Actualizar
