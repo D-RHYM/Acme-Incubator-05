@@ -1,6 +1,6 @@
 investor.application.form.label.ticker = Ticker:
 investor.application.form.label.moment = Momento:
-investor.application.form.label.statement = Estado:
+investor.application.form.label.statement = Descripcion:
 investor.application.form.label.moneyOffer = Dinero:
 investor.application.form.label.status = Estado:
 
@@ -18,3 +18,7 @@ investor.application.form.button.return = Volver
 investor.application.form.button.create = Crear
 
 investor.application.form.message.ticker = El ticker debe seguir el patron XXX-YY-NNNNNN
+investor.application.form.error.tickerLetters = Letras incorrectas en el ticker
+investor.application.form.error.tickerYearDigits = Digitos del año incorrectos en el ticker
+investor.application.form.error.existingTicker = Este ticker ya existe
+investor.application.form.error.moneyError = Dinero incorrecto

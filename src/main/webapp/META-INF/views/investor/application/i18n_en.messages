@@ -18,3 +18,7 @@ investor.application.form.button.return = Return
 investor.application.form.button.create = Create
 
 investor.application.form.message.ticker = The ticker must follow the pattern XXX-YY-NNNNNN
+investor.application.form.error.tickerLetters = Incorrect ticker letters
+investor.application.form.error.tickerYearDigits = Incorrect ticker year digits
+investor.application.form.error.existingTicker = Existing ticker
+investor.application.form.error.moneyError = Incorrect money
