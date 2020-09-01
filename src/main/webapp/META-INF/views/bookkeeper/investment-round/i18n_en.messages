@@ -10,6 +10,7 @@ bookkeeper.investmentRound.activity.list = List of activities
 
 bookkeeper.investmentRound.form.button.return = Return
 bookkeeper.investmentRound.form.button.list-accounting-record = List Accounting Records
+bookkeeper.investmentRound.form.button.create-accounting-record = Create accounting record (only one per bookkeeper)
 
 bookkeeper.investmentRound.list.label.ticker = Ticker
 bookkeeper.investmentRound.list.label.round = Round

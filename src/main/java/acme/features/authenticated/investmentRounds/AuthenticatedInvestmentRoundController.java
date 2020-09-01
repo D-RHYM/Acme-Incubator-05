@@ -13,7 +13,7 @@ import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/investment-round")
+@RequestMapping("/authenticated/investment-round/")
 public class AuthenticatedInvestmentRoundController extends AbstractController<Authenticated, InvestmentRound> {
 
 	@Autowired

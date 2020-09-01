@@ -30,6 +30,9 @@ public interface AuthenticatedMessageRepository extends AbstractRepository {
 	@Query("select c from CustomisationParameters c")
 	CustomisationParameters findOneCustomisationParameters();
 
+	@Query("select count(d)>0 from DiscussionForum d where d.id = ?1 and d.creator.id = ?2")
+	Boolean findIsDiscussionForumCreator(int forumId, int creatorId);
+
 	@Query("select count(p)>0 from Participant p where p.discussionForum.id = ?1 and p.authenticated.id = ?2")
 	Boolean findExistsDiscussionForumParticipant(int discussionForumId, int authenticatedId);
 }

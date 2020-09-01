@@ -3,10 +3,10 @@
        `id` integer not null,
         `version` integer not null,
         `body` varchar(255),
-        `moment` datetime(6),
+        `creation_moment` datetime(6),
         `status` integer,
         `title` varchar(255),
-        `creator_id` integer not null,
+        `bookkeeper_id` integer not null,
         `investment_round_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -40,10 +40,12 @@
     create table `application` (
        `id` integer not null,
         `version` integer not null,
+        `justification` varchar(255),
         `moment` datetime(6),
         `money_offer_amount` double precision,
         `money_offer_currency` varchar(255),
         `statement` varchar(255),
+        `status` integer,
         `ticker` varchar(255),
         `entrepreneur_id` integer not null,
         `investment_round_id` integer not null,
@@ -74,6 +76,16 @@
         `user_account_id` integer,
         `firm` varchar(255),
         `responsability_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `bookkeeper_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `responsability_statement` varchar(255),
+        `status` integer,
+        `user_account_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -184,6 +196,7 @@
         `amount_amount` double precision,
         `amount_currency` varchar(255),
         `description` varchar(255),
+        `final_mode` bit,
         `link` varchar(255),
         `moment` datetime(6),
         `round` integer,
@@ -304,13 +317,15 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
+create index IDXhwforwdu8n1h9l7gxea3vxdvj on `accounting_record` (`status`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
     alter table `accounting_record` 
-       add constraint `FK1ael07h1c59wo1efugbs4nlgc` 
-       foreign key (`creator_id`) 
+       add constraint `FK41jm4vk7runvmg5tderffrele` 
+       foreign key (`bookkeeper_id`) 
        references `bookkeeper` (`id`);
 
     alter table `accounting_record` 
@@ -360,6 +375,11 @@
 
     alter table `bookkeeper` 
        add constraint FK_krvjp9eaqyapewl2igugbo9o8 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `bookkeeper_request` 
+       add constraint `FKrkmyfaktfktoo2v26a9qu4ebb` 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 

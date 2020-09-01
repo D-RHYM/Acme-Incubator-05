@@ -15,3 +15,4 @@ authenticated.investmentRound.form.button.list-accounting-record = List Accounti
 authenticated.investmentRound.list.label.title = Title
 authenticated.investmentRound.list.label.ticker = Ticker
 authenticated.investmentRound.list.label.amount = Amount
+authenticated.investmentRound.form.button.create-forum = Create discussion forum (only one active at same time)

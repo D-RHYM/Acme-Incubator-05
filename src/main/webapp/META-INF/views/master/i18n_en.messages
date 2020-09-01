@@ -75,6 +75,7 @@ master.menu.authenticated.list-tool-record = List Tool Records
 
 master.menu.authenticated.list-investment-round = List Investment Rounds
 master.menu.authenticated.list-my-discussion-forum = List my discussions forums
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -100,6 +101,8 @@ master.menu.administrator.create-overture = Create overture
 master.menu.administrator.create-techRecord = Create tech record
 master.menu.administrator.list-techRecord = List tech records
 
+master.menu.administrator.list-bookkeeper-requests = List bookkeepers requests
+
 master.menu.administrator.dashboard = Dashboard
 
 # master.menu.provider ########################################################
@@ -115,6 +118,7 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.investor ###########################################################
 
 master.menu.investor = Investor
+master.menu.investor.investementRound = Investment rounds
 master.menu.investor.application  = List my applications
 
 # master.menu.entrepreneur ######################################################
@@ -122,12 +126,14 @@ master.menu.investor.application  = List my applications
 master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.list-mine-application = List my applications
 master.menu.entrepreneur.list-investment-round = List my investment rounds
+master.menu.entrepreneur.create-investment-round = Create investment round
 
 # master.menu.bookkeeper ######################################################
 
 master.menu.bookkeeper = Bookkeeper
-master.menu.bookkeeper.list-investment-round = List my investment rounds
-master.menu.bookkeeper.list-not-investment-round = List not my investment rounds
+master.menu.bookkeeper.accounting-record.list = List my accounting records
+master.menu.bookkeeper.list-investment-round = List investment rounds accounted
+master.menu.bookkeeper.list-not-investment-round = List investment rounds not accounted
 
 # master.menu.user-account ####################################################
 
@@ -137,6 +143,12 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+master.menu.user-account.entrepreneur = Entrepreneur data
+master.menu.user-account.become-entrepreneur = Become an entrepreneur
+master.menu.user-account.investor = Investor data
+master.menu.user-account.become-investor = Become an investor
+
+master.menu.user-account.bookkeeper-request = Send request to become a bookkeeper
 
 # master.footer ###############################################################
 

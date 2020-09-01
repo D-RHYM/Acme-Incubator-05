@@ -15,3 +15,4 @@ authenticated.investmentRound.form.button.list-accounting-record = Listar Regist
 authenticated.investmentRound.list.label.title = Título
 authenticated.investmentRound.list.label.ticker = Ticker
 authenticated.investmentRound.list.label.amount = Cantidad 
+authenticated.investmentRound.form.button.create-forum = Crear foro discusión (solo uno activo al mismo tiempo)

@@ -25,7 +25,7 @@ public class AuthenticatedParticipantListService implements AbstractListService<
 
 		int discussionForumId = request.getModel().getInteger("id");
 		int authenticatedId = request.getPrincipal().getActiveRoleId();
-		boolean result = this.repository.findIsForumParticipant(discussionForumId, authenticatedId);
+		boolean result = this.repository.findIsForumParticipant(discussionForumId, authenticatedId) || this.repository.findIsForumCreator(discussionForumId, authenticatedId);
 
 		return result;
 	}

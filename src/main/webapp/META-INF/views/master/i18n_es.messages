@@ -102,6 +102,8 @@ master.menu.administrator.create-overture = Crear overtura
 master.menu.administrator.create-techRecord = Crear registro de tecnologia
 master.menu.administrator.list-techRecord = Listar registros de tecnologia
 
+master.menu.administrator.list-bookkeeper-requests = Listar peticiones para contables
+
 master.menu.administrator.dashboard = Panel de control
 
 # master.menu.provider ########################################################
@@ -117,6 +119,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 # master.menu.investor ###########################################################
 
 master.menu.investor = Inversor
+master.menu.investor.investementRound = Rondas de inversiones
 master.menu.investor.application  = Listar mis aplicaciones
 
 # master.menu.entrepreneur ######################################################
@@ -124,12 +127,14 @@ master.menu.investor.application  = Listar mis aplicaciones
 master.menu.entrepreneur = Emprendedor
 master.menu.entrepreneur.list-mine-application = Listar mis aplicaciones
 master.menu.entrepreneur.list-investment-round = Listar mis rondas de inversiones
+master.menu.entrepreneur.create-investment-round = Crear ronda de inversion
 
 # master.menu.bookkeeper ######################################################
 
 master.menu.bookkeeper = Contable
-master.menu.bookkeeper.list-investment-round = Listar mis rondas de inversiones
-master.menu.bookkeeper.list-not-investment-round = Listar rondas de inversiones ajenas
+master.menu.bookkeeper.accounting-record.list = Listar mis registros de contabilidad
+master.menu.bookkeeper.list-investment-round = Listar rondas de inversiones registradas
+master.menu.bookkeeper.list-not-investment-round = Listar rondas de inversiones no registradas
 
 # master.menu.user-account ####################################################
 
@@ -139,6 +144,12 @@ master.menu.user-account.provider = Datos de proveedor
 master.menu.user-account.become-provider = Hazte proveedor
 master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
+master.menu.user-account.entrepreneur = Datos de empresario
+master.menu.user-account.become-entrepreneur = Hazte empresario
+master.menu.user-account.investor = Datos de inversor
+master.menu.user-account.become-investor = Hazte inversor
+
+master.menu.user-account.bookkeeper-request = Hazte contable
 
 ﻿# master.footer ###############################################################
 

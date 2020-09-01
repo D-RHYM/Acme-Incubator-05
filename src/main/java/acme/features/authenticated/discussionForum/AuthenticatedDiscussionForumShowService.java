@@ -25,7 +25,7 @@ public class AuthenticatedDiscussionForumShowService implements AbstractShowServ
 		assert request != null;
 		int discussionForumId = request.getModel().getInteger("id");
 		Principal principal = request.getPrincipal();
-		boolean result = this.repository.findExistsDiscussionForumParticipant(discussionForumId, principal.getActiveRoleId());
+		boolean result = this.repository.findExistsDiscussionForumParticipant(discussionForumId, principal.getActiveRoleId()) || this.repository.findIsDiscussionForumCreator(discussionForumId, principal.getActiveRoleId());
 		return result;
 	}
 
