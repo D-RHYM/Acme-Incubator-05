@@ -317,8 +317,8 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
-create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 create index IDXhwforwdu8n1h9l7gxea3vxdvj on `accounting_record` (`status`);
+create index IDX2q2747fhp099wkn3j2yt05fhs on `application` (`status`);
 
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
